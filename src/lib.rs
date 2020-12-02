@@ -17,7 +17,7 @@ impl Opts {
 macro_rules! concat_newline {
     () => {};
     ( $arg:literal $(,)? ) => { $arg };
-    ( $arg:literal , $( $argv:literal ),+ ) => {
+    ( $arg:literal , $( $argv:literal ),+  $(,)? ) => {
         core::concat!($arg, "\n", $crate::concat_newline!( $( $argv ),+ ))
     };
 }
